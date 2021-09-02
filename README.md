@@ -4,5 +4,5 @@
 
 ## Notes
 
-* Your GitHub account must be 10 days or older to deploy apps on Railway.
+* Your GitHub account must be 30 days or older to deploy apps on Railway.
 * After deploying, every time you need to add new vars, **YOU MUST DELETE YOUR OLD DEPLOYMENT FIRST**. Or else, your Telegram user session will be revoked due to the duplication caused by the temporary parallel deployments of Railway and you need to regenerate the session string.
