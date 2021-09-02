@@ -43,7 +43,7 @@ ENV VIRTUAL_ENV=/opt/venv
 RUN python3 -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
-RUN git clone https://github.com/UsergeTeam/Userge .
+RUN git clone https://github.com/ZDARKSHADOWXD/UX-itachi .
 
 RUN python3 -m pip install -U \
     pip \
