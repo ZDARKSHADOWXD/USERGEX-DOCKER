@@ -33,3 +33,23 @@
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod&style=flat-square)](https://gitpod.io/#https://github.com/code-rgb/userge-x)
 [![Docker Image](https://img.shields.io/docker/image-size/varietyjames1/userge_x?color=blue&label=Docker%20Size&style=flat-square&logo=docker&logoColor=white)](https://hub.docker.com/r/varietyjames1/userge_x/tags?page=1&ordering=last_updated)
 <br>
+
+## Features 
+
+* Powerful and Very Useful **built-in** Plugins
+  * gdrive [ upload / download / etc ] ( Team Drives Supported! ) 
+  * zip / tar / unzip / untar / unrar
+  * telegram upload / download
+  * pmpermit / afk
+  * notes / filters
+  * split / combine
+  * gadmin
+  * plugin manager
+  * ...and more
+* Channel & Group log support
+* Database support
+* Build-in help support
+* Easy to Setup & Use
+* Easy to add / port Plugins
+* Easy to write modules with the modified client
+
