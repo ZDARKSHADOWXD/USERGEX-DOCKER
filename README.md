@@ -18,6 +18,34 @@
 * Your GitHub account must be 30 days or older to deploy apps on Railway.
 * After deploying, every time you need to add new vars, **YOU MUST DELETE YOUR OLD DEPLOYMENT FIRST**. Or else, your Telegram user session will be revoked due to the duplication caused by the temporary parallel deployments of Railway and you need to regenerate the session string.
 
+## Other Ways
+
+* With Docker 🐳 
+    <a href="https://github.com/code-rgb/USERGE-X/blob/alpha/resources/readmeDocker.md"><b>See Detailed Guide</b></a>
+
+* With Git, Python and pip 🔧
+  ```bash
+  # clone the repo
+  git clone https://github.com/code-rgb/userge-x.git
+  cd userge-x
+
+  # create virtualenv
+  virtualenv -p /usr/bin/python3 venv
+  . ./venv/bin/activate
+
+  # install requirements
+  pip install -r requirements.txt
+
+  # Create config.env as given config.env.sample and fill that
+  cp config.env.sample config.env
+
+  # get string session and add it to config.env
+  bash genStr
+
+  # finally run the USERGE-X ;)
+  bash run
+  ```
+
 
 [![Open Source Love svg1](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/code-rgb/userge-x)
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg?&style=flat-square)](https://github.com/code-rgb/USERGE-X#copyright--license)
