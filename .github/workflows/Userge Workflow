@@ -1,0 +1,44 @@
+name: Userge Workflow
+
+on:
+    push:
+    workflow_dispatch:
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+       - name: Checkout
+         uses: actions/checkout@main
+       
+       - uses: styfle/cancel-workflow-action@0.9.0
+         name: "Cancel duplicate workflow runs"
+         with:
+            all_but_latest: true
+            access_token: ${{ github.token }}
+       - name: initialization
+         continue-on-error: true
+         run: |
+           git config --global user.name ${{ secrets.GitHubName }}
+           git config --global user.email ${{ secrets.GitHubMail }}
+           git config --global credential.helper store
+           echo "https://${{ secrets.GitHubName }}:${{ secrets.GH_TOKEN }}@github.com" > ~/.git-credentials
+       - name: cloning repo
+         continue-on-error: true
+         run: |
+           git clone https://${{ secrets.GitHubName }}:${{ secrets.GH_TOKEN }}@${{ secrets.CREDS }} ultroid
+       - name: Running Userge
+         timeout-minutes: 99999999999999
+         continue-on-error: true
+         run: |
+           sudo sh action.sh
+       - name: Loop workflow
+         continue-on-error: true
+         run: |
+              git clone https://github.com/${GITHUB_REPOSITORY} loop
+              cd loop || exit 1
+              echo $(date -u +%T%P) >> loop.txt
+              git add loop.txt
+              git commit -m "Workflow : Loop $(date -u +%D-%T%P)"
+              git push -q https://${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY} HEAD:dev
